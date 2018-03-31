@@ -89,8 +89,13 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
       //  Collider[] colliderComponents = GetComponentsInChildren<Collider>();
 
         Terrain[] terrainComponents = GetComponentsInChildren<Terrain>();
+        AudioSource[] audioComponents = GetComponentsInChildren<AudioSource>();
 
         foreach (Terrain component in terrainComponents)
+        {
+            component.enabled = true;
+        }
+        foreach (AudioSource component in audioComponents)
         {
             component.enabled = true;
         }
@@ -133,12 +138,16 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
       //  Collider[] colliderComponents = GetComponentsInChildren<Collider>();
 
         Terrain[] terrainComponents = GetComponentsInChildren<Terrain>();
+        AudioSource[] audioComponents = GetComponentsInChildren<AudioSource>();
 
         foreach (Terrain component in terrainComponents)
         {
             component.enabled = false;
         }
-
+        foreach (AudioSource component in audioComponents)
+        {
+            component.enabled = false;
+        }
         // Disable rendering:
         foreach (Renderer component in rendererComponents)
         {
