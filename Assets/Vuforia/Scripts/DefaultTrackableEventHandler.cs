@@ -84,6 +84,30 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+
+      //  Renderer[] rendererComponents = GetComponentsInChildren<Renderer>();
+      //  Collider[] colliderComponents = GetComponentsInChildren<Collider>();
+
+        Terrain[] terrainComponents = GetComponentsInChildren<Terrain>();
+
+        foreach (Terrain component in terrainComponents)
+        {
+            component.enabled = true;
+        }
+
+        // Enable rendering:
+        foreach (Renderer component in rendererComponents)
+        {
+            component.enabled = true;
+        }
+
+        // Enable colliders:
+        foreach (Collider component in colliderComponents)
+        {
+            component.enabled = true;
+        }
+
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
 
 
@@ -104,6 +128,30 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+
+      //  Renderer[] rendererComponents = GetComponentsInChildren<Renderer>();
+      //  Collider[] colliderComponents = GetComponentsInChildren<Collider>();
+
+        Terrain[] terrainComponents = GetComponentsInChildren<Terrain>();
+
+        foreach (Terrain component in terrainComponents)
+        {
+            component.enabled = false;
+        }
+
+        // Disable rendering:
+        foreach (Renderer component in rendererComponents)
+        {
+            component.enabled = false;
+        }
+
+        // Disable colliders:
+        foreach (Collider component in colliderComponents)
+        {
+            component.enabled = false;
+        }
+
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
 
     #endregion // PRIVATE_METHODS
